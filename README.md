@@ -35,29 +35,24 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-
-ShadeCN- built on radix UI - Component lib that gives acce4sibnility of blocks - uses tailwin css 
+ShadeCN- built on radix UI - Component lib that gives acce4sibnility of blocks - uses tailwin css
 
 Clerk Auth
-neon - serverless branchable postgres database - 
-DRIZZLE orm - typescript object relational maper - way to interact with db wo using sQL 
+neon - serverless branchable postgres database -
+DRIZZLE orm - typescript object relational maper - way to interact with db wo using sQL
 prisma slower and not edge compatible while drizzle is edge comp
 
 Set up S3 buckets with configured bucket policies and cross-origin resource sharing (CORS) to streamline input handling and data storage
 
-IAM - identity and access management  - method to use presigned url thats valid for a short time allowing direct file upload w/o exposing the access keys.
-
+IAM - identity and access management - method to use presigned url thats valid for a short time allowing direct file upload w/o exposing the access keys.
 
 RAG:
+
 1. Obntain PDF
 2. Split and segment the PDF
 3. Vectorize and embed individual documents
 4. Store vectors in DB
 
---Search--
-5. Embed the query
-6. Query the pineconedb for similar vecotrs
-7. Extract out the metadata of the similar vector
-8. Feed metadata into AI prompt
+--Search-- 5. Embed the query 6. Query the pineconedb for similar vecotrs 7. Extract out the metadata of the similar vector 8. Feed metadata into AI prompt
 
 Langchain helps in splitting and segmenting the pdf
