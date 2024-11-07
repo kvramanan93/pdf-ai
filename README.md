@@ -43,3 +43,10 @@ neon - serverless branchable postgres database -
 DRIZZLE orm - typescript object relational maper - way to interact with db wo using sQL 
 prisma slower and not edge compatible while drizzle is edge comp
 
+Set up S3 buckets with configured bucket policies and cross-origin resource sharing (CORS) to streamline input handling and data storage
+
+IAM - identity and access management  - method to use presigned url thats valid for a short time allowing direct file upload w/o exposing the access keys.
+
+
+RAG:
+1. Vector and Embeddings

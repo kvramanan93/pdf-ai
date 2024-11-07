@@ -23,8 +23,9 @@ export default function Home() {
             {isSignedIn && <Button>Go to Chats</Button>}
           </div>
           <p className="max-w-xl mt-1 text-lg text-slate-600">
-            Get Information or to extract any new information from your PDF's
-            with the power of SOA AI tech
+            Unlock insights from your PDFs effortlessly with cutting-edge SOA AI
+            technology. Extract valuable information and discover new details
+            seamlessly
           </p>
           <div>
             {isSignedIn ? (
