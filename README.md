@@ -49,4 +49,15 @@ IAM - identity and access management  - method to use presigned url thats valid 
 
 
 RAG:
-1. Vector and Embeddings
+1. Obntain PDF
+2. Split and segment the PDF
+3. Vectorize and embed individual documents
+4. Store vectors in DB
+
+--Search--
+5. Embed the query
+6. Query the pineconedb for similar vecotrs
+7. Extract out the metadata of the similar vector
+8. Feed metadata into AI prompt
+
+Langchain helps in splitting and segmenting the pdf
