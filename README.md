@@ -53,6 +53,17 @@ RAG:
 3. Vectorize and embed individual documents
 4. Store vectors in DB
 
---Search-- 5. Embed the query 6. Query the pineconedb for similar vecotrs 7. Extract out the metadata of the similar vector 8. Feed metadata into AI prompt
+Search:
+
+5. Embed the query
+6. Query the pineconedb for similar vecotrs
+7. Extract out the metadata of the similar vector
+8. Feed metadata into AI prompt
 
 Langchain helps in splitting and segmenting the pdf
+
+tanstack react query makes it easy to handle muitations in data query from l0ocal to server endpoints
+
+Pinecone - 
+Index -> Database
+namespace -> Segment pdf vector spaces
