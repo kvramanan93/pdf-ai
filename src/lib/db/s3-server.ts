@@ -22,6 +22,7 @@ export async function downloadFromS3(file_key: string){
         const file_name = `/tmp/pdf-${Date.now()}.pdf`; ; 
         //Template string to make sure that the file is downloaded with respect to current time
         fs.writeFileSync(file_name, obj.Body as Buffer);
+        return file_name;
 
     } catch (error) {
         console.log(error);

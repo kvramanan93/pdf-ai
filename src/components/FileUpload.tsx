@@ -6,8 +6,10 @@ import { useDropzone } from "react-dropzone";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios"; // used to make api call to the backend
 import toast from "react-hot-toast";
+import {useRouter} from 'next/navigation' // not from next/router
 
 const FileUpload = () => {
+  const router = useRouter();
   const [uploading, setUploading] = React.useState(false);
   const { mutate, isPending } = useMutation({
     mutationFn: async ({
@@ -21,6 +23,7 @@ const FileUpload = () => {
         file_key,
         file_name,
       });
+      return response.data;
     },
   });
 
@@ -39,16 +42,17 @@ const FileUpload = () => {
         const data = await uploadToS3(file);
         if (!data?.file_key || !data.file_name) {
           toast.error("Something is wrong with the file upload");
-          alert("Something is wrong with the file upload");
           return;
         }
         mutate(data, {
-          onSuccess: (data) => {
+          onSuccess: (chat_id) => {
             toast.success("Chat created successfully");
-            console.log("data", data);
+            router.push(`/chat/${chat_id.chat_id}`);
+            //console.log(data);
           },
           onError: (err) => {
             toast.error("Error creating chat");
+            console.error(err);
           },
         });
       } catch (error) {
