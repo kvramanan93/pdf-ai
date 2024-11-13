@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Pinecone } from "@pinecone-database/pinecone";
 import { downloadFromS3 } from "./db/s3-server";
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
@@ -102,6 +104,7 @@ export const truncateStringByBytes = (str: string, numBytes: number) => {
 };
 
 async function prepareDocument(page: PDFpage) {
+  // eslint-disable-next-line prefer-const
   let { metadata, pageContent } = page;
   pageContent = pageContent.replace(/(\r\n|\n|\r)/gm, " ");
   //Splitting the docs

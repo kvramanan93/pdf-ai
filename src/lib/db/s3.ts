@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import AWS from "aws-sdk";
 
 export async function uploadToS3(file: File) {
@@ -22,7 +23,7 @@ export async function uploadToS3(file: File) {
       Body: file,
     };
     const upload = s3.putObject(params).on('httpUploadProgress',evt=>{
-      console.log('Uploading to S3...',parseInt(((evt.loaded*100)/evt.total).toString()))+'%';
+      console.log('Uploading to S3...', parseInt(((evt.loaded * 100) / evt.total).toString()) + '%');
     }).promise();
 
     await upload.then(data => {
@@ -34,7 +35,9 @@ export async function uploadToS3(file: File) {
       file_name: file.name,
     });
 
-  } catch (error) {}
+  } catch (error) {
+    console.error("Error uploading file to S3:", error);
+  }
 }
 
 export function getS3Url(file_key:string){
