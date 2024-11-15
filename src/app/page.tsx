@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Corrected version of Home component
 "use client";
 
@@ -7,6 +8,7 @@ import { UserButton, useUser } from "@clerk/nextjs";
 import { LogIn } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+//import { GimmeChatId } from "@/app/chat/[chatId]/page";
 
 export default function Home() {
   const { isSignedIn } = useUser();
@@ -20,8 +22,13 @@ export default function Home() {
             <UserButton afterSignOutUrl="/" />
           </div>
           <div className="flex mt-2">
-            {isSignedIn && <Button>Go to Chats</Button>}
+            {isSignedIn && (
+              <Link href={`/chat/1`}>
+                <Button>Go to Chats</Button>
+              </Link>
+            )}
           </div>
+
           <p className="max-w-xl mt-1 text-lg text-slate-600">
             Unlock insights from your PDFs effortlessly with cutting-edge SOA AI
             technology. Extract valuable information and discover new details

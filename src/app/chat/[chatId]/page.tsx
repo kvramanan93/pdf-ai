@@ -5,12 +5,27 @@ import { chats } from "@/lib/db/schema";
 import { db } from "../../../lib/db";
 import ChatSidebar from "../../../components/ChatSidebar";
 import { eq } from "drizzle-orm";
+import PDFViewer from "../../../components/PDFViewer";
+import ChatComponent from "../../../components/ChatComponent";
 
 type Props = {
   params: {
     chatId: string;
   };
 };
+
+/*
+export async function GimmeChatId() {
+  const { userId } = await auth();
+  if (!userId) {
+    return redirect("/sign-in");
+  }
+  const _chats = await db.select().from(chats).where(eq(chats.userID, userId));
+  if (_chats && _chats.length > 0) {
+    return _chats[0].id;
+  }
+}
+  */
 
 //Async - server component banane ke liye
 
@@ -31,6 +46,8 @@ const chatPage = async ({ params }: Props) => {
     return redirect("/");
   }
 
+  const currentChat = _chats.find((chat) => chat.id === parseInt(chatId));
+
   return (
     <div className="flex max-h-screen overflow-hidden">
       <div className="flex w-full max-h-screen overflow-hidden">
@@ -40,11 +57,11 @@ const chatPage = async ({ params }: Props) => {
         </div>
         {/*pdf viewer*/}
         <div className="max-h-screen p-4 overflow-hidden flex-[5]">
-          {/*<PDFViewer/>*/}
+          {<PDFViewer pdf_url={currentChat?.pdfURL || ""} />}
         </div>
         {/*Chat component*/}
         <div className="flex-[3] border-1-4 border-1-slate-200">
-          {/*<Chat Component/>*/}
+          {<ChatComponent />}
         </div>
       </div>
     </div>
