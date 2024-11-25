@@ -67,3 +67,8 @@ tanstack react query makes it easy to handle muitations in data query from l0oca
 Pinecone - 
 Index -> Database
 namespace -> Segment pdf vector spaces
+
+
+ISSUES TO BE TAKEN CARE OF -
+Possible bad embedding of input text- Have to change the way input pdf is split and converted to embeddings
+Every chat has to have its own context and not involve data from other chats 
